@@ -68,4 +68,5 @@ Save MagicSquare.java and (optionally) Main.java in the same folder.
 Compile and run:
 
 javac MagicSquare.java Main.java
+
 java Main
