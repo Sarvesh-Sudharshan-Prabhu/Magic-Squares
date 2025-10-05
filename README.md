@@ -1,43 +1,49 @@
-Magic Squares (Java)
+# 🧮 Magic Squares (Java)
 
-A simple Java program that constructs and verifies Magic Squares — square matrices in which the sum of every row, column, and diagonal equals the same constant.
+A simple Java program that constructs and verifies **Magic Squares** — square matrices in which the sum of every row, column, and diagonal equals the same constant.
 
-📂 Project Structure
+---
+
+## 📂 Project Structure
+```
 Magic-Squares-main/
 └── MagicSquare.java
+```
 
-🧩 Overview
+---
 
-The MagicSquare class allows you to:
+## 🧩 Overview
+The `MagicSquare` class enables users to:
+- 🧠 Create an *n × n* magic square.
+- ➕ Insert numbers sequentially in row-major order.
+- ⚖️ Automatically compute the *magic constant* each row, column, and diagonal should equal.
+- ✅ Verify if the square is truly “magic,” meaning all rows, columns, and diagonals sum to the same total.
 
-Create an n × n magic square.
+---
 
-Insert numbers in row-major order.
+## 🧠 Core Class: `MagicSquare`
 
-Automatically calculate the magic constant each row, column, and diagonal should equal.
-
-Verify if the square is indeed “magic” — that is, if all rows, columns, and diagonals sum to the same value.
-
-🧠 Core Class: MagicSquare
-Constructor
+### Constructor
+```java
 public MagicSquare(int n)
+```
+Creates an empty *n × n* magic square.
 
+### Methods
+| Method | Description |
+|--------|--------------|
+| `void add(int x)` | Inserts `x` into the next available cell (row-major order). |
+| `boolean isMagical()` | Checks if the square satisfies the magic square condition. |
+| `String toString()` | Returns a formatted string representation of the square. |
 
-Creates an empty n × n square.
+### Helper Methods
+- `getConstant()` — Calculates the theoretical magic constant.  
+- `isMagicalRows()` / `isMagicalColumns()` / `isMagicalDiagonals()` — Validate each dimension individually.
 
-Methods
-Method	Description
-void add(int x)	Inserts x in the next available position (row-major order).
-boolean isMagical()	Checks if the square is a valid magic square.
-String toString()	Returns a readable string representation of the square.
+---
 
-The class also includes helper methods:
-
-getConstant() — Calculates the theoretical magic constant.
-
-isMagicalRows(), isMagicalColumns(), isMagicalDiagonals() — Validate rows, columns, and diagonals individually.
-
-🧪 Example Usage
+## 🧪 Example Usage
+```java
 public class Main {
     public static void main(String[] args) {
         MagicSquare square = new MagicSquare(3);
@@ -52,21 +58,26 @@ public class Main {
         System.out.println("Is magic? " + square.isMagical());
     }
 }
+```
 
-Output
+### Sample Output
+```
 8 1 6
 3 5 7
 4 9 2
 Is magic? true
+```
 
-⚙️ How to Run
+---
 
-Ensure Java (JDK 8+) is installed.
+## ⚙️ How to Run
 
-Save MagicSquare.java and (optionally) Main.java in the same folder.
+1. Ensure **Java (JDK 8+)** is installed.  
+2. Save both `MagicSquare.java` and (optionally) `Main.java` in the same folder.  
+3. Compile and run:
+   ```bash
+   javac MagicSquare.java Main.java
+   java Main
+   ```
 
-Compile and run:
-
-javac MagicSquare.java Main.java
-
-java Main
+---
